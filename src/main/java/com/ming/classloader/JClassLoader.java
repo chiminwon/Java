@@ -3,6 +3,7 @@ package com.ming.classloader;
 public class JClassLoader {
 
     public static final String CLASS_FULL_PATH = "com.ming.classloader.MusicPlayer";
+    public static final String CLASS_FULL_PATH_NETWORK = "MusicPlayer";
 
     public static void main(String[] args) throws ClassNotFoundException {
 //        loadClass();
@@ -20,7 +21,8 @@ public class JClassLoader {
         String className = CLASS_FULL_PATH;
         ClassLoader networkClassLoader = new NetworkClassLoader();
         Class<?> clazz = networkClassLoader.loadClass(className);
-        System.out.printf("Load the class: " + clazz.getName()+"\n");
+        System.out.printf("Load the class: %s\n", clazz.getName());
+        System.out.printf("Current ClassLoader is: %s\n", clazz.getClassLoader().getClass().getSimpleName());
         try {
             clazz.newInstance();
         } catch (InstantiationException e) {

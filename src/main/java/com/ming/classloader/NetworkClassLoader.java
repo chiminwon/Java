@@ -1,7 +1,6 @@
 package com.ming.classloader;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -13,6 +12,7 @@ public class NetworkClassLoader extends ClassLoader {
 
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
+        System.out.println("Find class from NetworkClassLoader");
         // 从远程下载
         byte[] classData = downloadClassData(name);
         if (null == classData) {
