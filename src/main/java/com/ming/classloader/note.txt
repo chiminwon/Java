@@ -1,0 +1,3 @@
+Notes
+1.将MusicPlayer.class文件复制到C:\Tools\Apache24\htdocs\java目录中
+2.启动Apache Server(:81)
